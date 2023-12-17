@@ -66,17 +66,85 @@
       <div class="row row-cols-1 row-cols-lg-2">
         <div class="col-lg-8">
           <pre class="line-numbers"><code class="language-javascript">
-            // Call Hello World
-            function helloWorld(){
-              alert("Hello World");
+
+            // Get the values from the Page
+            function getValues()
+            {
+              // - get value from page
+              let startValue = document.getElementById("startValue").value;
+              let endValue = document.getElementById("endValue").value;
+            
+              // parse into int
+              startValue = parseInt(startValue);
+              endValue = parseInt(endValue);
+              let numbers = [];
+            
+              if(Number.isInteger(startValue) && Number.isInteger(endValue)) 
+              {
+                
+                // - call generateNumbers
+                numbers = generateNumbers(startValue, endValue);
+                // We call displayNumbers
+                displayNumbers(numbers);
+            
+              }
+              else
+              {
+                alert("You must enter integers");
+              }
+            
             }
+            
+            
+            // generate numbers from startValue and endValue
+            function generateNumbers(sValue, eValue)
+            {
+              
+              let numbers = [];
+            
+              for (let i = sValue; i <= eValue; i++){
+                
+                numbers.push(i);
+                
+              }
+            
+              return numbers;
+              
+            }
+            
+            // display the numbers and mark the even number bold
+            function displayNumbers(numbers)
+            {
+            
+              let className = "even";
+              let templateRows = "";
+            
+              for (let i = 0; i < numbers.length; i++)
+              {
+                let number = numbers[i];
+            
+                if(number %  2 === 0)
+                {
+                  className = "even";
+                }
+                else
+                {
+                  className = "odd";
+                }
+                // This does not render correctly with Prism. See source code.
+                templateRows += `<tr><td class="${className}" >${number}</td></tr>`
+              }
+            
+              document.getElementById("results").innerHTML = templateRows;
+            
+            }
+
           </code>
           </pre>
         </div>
         <div class="col-lg-4">
-          <p>The Code is Structured in One Function</p>
-          <h5>Hello World</h5>
-          <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+          <h5>Hundo: Zero to 100</h5>
+          <p>This function takes a starting and an ending number, and prints out all numbers between, with even values in bold.</p>
         </div>
       </div>
     </div>

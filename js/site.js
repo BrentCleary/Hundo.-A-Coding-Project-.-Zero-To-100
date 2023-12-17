@@ -6,7 +6,6 @@
 
 
 // Get the values from the Page
-// Starts or controller function
 function getValues()
 {
   // - get value from page
@@ -32,13 +31,12 @@ function getValues()
     alert("You must enter integers");
   }
 
-
 }
 
 
 // generate numbers from startValue and endValue
-// logic function(s)
-function generateNumbers(sValue, eValue){
+function generateNumbers(sValue, eValue)
+{
   
   let numbers = [];
 
@@ -52,15 +50,15 @@ function generateNumbers(sValue, eValue){
   
 }
 
-
 // display the numbers and mark the even number bold
-// display or view functions
-function displayNumbers(numbers){
+function displayNumbers(numbers)
+{
 
   let className = "even";
   let templateRows = "";
 
-  for (let i = 0; i < numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++)
+  {
     let number = numbers[i];
 
     if(number %  2 === 0)
@@ -71,7 +69,7 @@ function displayNumbers(numbers){
     {
       className = "odd";
     }
-    
+
     templateRows += `<tr><td class="${className}" >${number}</td></tr>`
   }
 
