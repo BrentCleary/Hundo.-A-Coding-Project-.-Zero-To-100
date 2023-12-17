@@ -16,18 +16,22 @@ function getValues()
   // parse into int
   startValue = parseInt(startValue);
   endValue = parseInt(endValue);
+  let numbers = [];
 
   if(Number.isInteger(startValue) && Number.isInteger(endValue)) 
   {
     
     // - call generateNumbers
-    let numbers = generateNumbers(startValue, endValue);
-  
+    numbers = generateNumbers(startValue, endValue);
+    // We call displayNumbers
+    displayNumbers(numbers);
+
   }
   else
   {
     alert("You must enter integers");
   }
+
 
 }
 
@@ -51,6 +55,26 @@ function generateNumbers(sValue, eValue){
 
 // display the numbers and mark the even number bold
 // display or view functions
-function displayNumbers(){
+function displayNumbers(numbers){
+
+  let className = "even";
+  let templateRows = "";
+
+  for (let i = 0; i < numbers.length; i++) {
+    let number = numbers[i];
+
+    if(number %  2 === 0)
+    {
+      className = "even";
+    }
+    else
+    {
+      className = "odd";
+    }
+    
+    templateRows += `<tr><td class="${className}" >${number}</td></tr>`
+  }
+
+  document.getElementById("results").innerHTML = templateRows;
 
 }
