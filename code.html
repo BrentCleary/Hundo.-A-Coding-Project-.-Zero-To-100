@@ -49,7 +49,7 @@
                       <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/BrentCleary/Hundo.-A-Coding-Project-.-Zero-To-100">Git Repo</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" target="_blank" href="#">About</a>
@@ -81,35 +81,26 @@
             
               if(Number.isInteger(startValue) && Number.isInteger(endValue)) 
               {
-                
                 // - call generateNumbers
                 numbers = generateNumbers(startValue, endValue);
                 // We call displayNumbers
                 displayNumbers(numbers);
-            
               }
               else
               {
                 alert("You must enter integers");
               }
-            
             }
-            
             
             // generate numbers from startValue and endValue
             function generateNumbers(sValue, eValue)
             {
-              
               let numbers = [];
             
               for (let i = sValue; i <= eValue; i++){
-                
                 numbers.push(i);
-                
               }
-            
               return numbers;
-              
             }
             
             // display the numbers and mark the even number bold
@@ -134,16 +125,15 @@
                 // This does not render correctly with Prism. See source code.
                 templateRows += `<tr><td class="${className}" >${number}</td></tr>`
               }
-            
               document.getElementById("results").innerHTML = templateRows;
-            
             }
 
           </code>
           </pre>
         </div>
         <div class="col-lg-4">
-          <h5>Hundo: Zero to 100</h5>
+          <img src="img/HundoImg.jpg" alt="speedometer">
+          <h5 class="mt-3">Hundo: Zero to 100</h5>
           <p>This function takes a starting and an ending number, and prints out all numbers between, with even values in bold.</p>
         </div>
       </div>
